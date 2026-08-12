@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '@/shared/ui/button'
 
-function App() {
+export function MainPage() {
   return (
     <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-background text-foreground">
       <h1 className="text-4xl font-medium">MusicLab</h1>
@@ -8,5 +8,3 @@ function App() {
     </div>
   )
 }
-
-export default App

@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL
+import { API_URL } from '@/shared/config/env'
 
 export async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_URL}${path}`, {
