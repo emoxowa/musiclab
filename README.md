@@ -1,32 +1,64 @@
-# React + TypeScript + Vite
+# MusicLab
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Music streaming web app built with React, TypeScript and Vite.
 
-Currently, two official plugins are available:
+## Running the app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Node version
 
-## React Compiler
+Use the Node version pinned in `.nvmrc`:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+nvm use
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Dependencies
+
+Install necessary dependencies (this also sets up git hooks via husky):
+
+```bash
+npm install
+```
+
+### Env vars
+
+Copy necessary environment variables:
+
+```bash
+cp .env.example .env
+```
+
+And give them values (`VITE_API_URL` — base URL of the [musiclab-api](https://github.com/mrerberg/musiclab-api) backend).
+
+### Start app
+
+To start the app in dev mode use command:
+
+```bash
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Lint
+
+```bash
+npm run lint
+```
+
+## Architecture
+
+The project follows [Feature-Sliced Design](https://feature-sliced.design/).
+
+## Styling
+
+App uses [Tailwind CSS](https://tailwindcss.com/) and [shadcn/ui](https://ui.shadcn.com/) for components.
+
+## State management
+
+- [Redux Toolkit](https://redux-toolkit.js.org/) — client state
+- [TanStack Query](https://tanstack.com/query) — server state
